@@ -1,17 +1,64 @@
 @charset "UTF-8";
 
 /* ######
+   Fontes
+############ */
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Light.woff2') format('woff2'),
+		 url('../fonts/OpenSans-Light.woff') format('woff'),
+		 url('../fonts/OpenSans-Light.svg#OpenSans-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+		 url('../fonts/OpenSans-Regular.woff') format('woff'),
+		 url('../fonts/OpenSans-Regular.svg#OpenSans-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Raleway';
+	src: url('../fonts/Raleway-SemiBold.woff2') format('woff2'),
+		 url('../fonts/Raleway-SemiBold.woff') format('woff'),
+		 url('../fonts/Raleway-SemiBold.svg#Raleway-SemiBold') format('svg');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Raleway';
+	src: url('../fonts/Raleway-Bold.woff2') format('woff2'),
+		 url('../fonts/Raleway-Bold.woff') format('woff'),
+		 url('../fonts/Raleway-Bold.svg#Raleway-Bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* ######
    Variáveis
 ############ */
 
 /* Cores */
 
-$texto: #888;
-$corModelo: #315065;
+$cinza: #F6F6F6;
+$azul: #0F75BD;
+$azulEscuro: #22313F;
+$amarelo: #F9BF3B;
 
 /* Fontes */
 
-$openSans: 'Open Sans', sans-serif;
+$openSans: 'Open Sans';
+$raleway: 'Raleway';
 
 /* ######
    Mixins
@@ -47,39 +94,39 @@ $openSans: 'Open Sans', sans-serif;
 
 @mixin texto($modelo) {
 	@if $modelo == 'texto' {
+		color: $azulEscuro;
 		font-size: 14px;
-		line-height: 20px;
+		font-weight: normal;
+		font-family: $openSans;
+		line-height: 140%;
 		margin: 0 0 15px;
 	} @else if $modelo == 'titulo' {
-		color: $corModelo;
-		font-size: 30px;
-		font-weight: 700;
-		line-height: 35px;
-		text-transform: uppercase;
-		margin: 0 0 30px;
+		color: $azulEscuro;
+		font-size: 24px;
+		font-weight: 600;
+		font-family: $raleway;
+		line-height: 140%;
+		letter-spacing: 0.025em;
+		text-align: center;
+		padding: 45px 0 0;
+		background: url('../images/icons/titulo.png') no-repeat top center;
 	}
 }
 
 /* Botões */
 
-@mixin botao($modelo) {
-	text-transform: uppercase;
+@mixin botao {
+	color: $azulEscuro;
+	font-size: 20px;
+	font-weight: 600;
+	font-family: $raleway;
+	line-height: 100%;
 	display: inline-block;
-	padding: 12px 30px;
-	@if $modelo == 'branco' {
-		color: #FFF;
-		background: $corModelo;
-		&:hover {
-			color: #FFF;
-			background: $corModelo;
-		}
-	} @else if $modelo == 'preto' {
-		color: $corModelo;
-		background: #FFF;
-		&:hover {
-			color: $corModelo;
-			background: #FFF;
-		}
-
+	padding: 25px 80px;
+	transition: .3s;
+	background: $amarelo;
+	&:hover {
+		color: $amarelo;
+		background: $azulEscuro;
 	}
 }

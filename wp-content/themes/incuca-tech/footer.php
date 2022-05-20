@@ -1,3 +1,7 @@
+		<footer id="footer"></footer>
+
+		<section id="link"></section><!--/ link -->
+
 		<div class="box-return">
 			<a href="#top">Voltar</a>
 		</div><!--/ box-return -->

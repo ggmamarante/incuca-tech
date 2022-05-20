@@ -14,12 +14,7 @@
 		if (is_admin())
 		return;
 		wp_enqueue_script('bootstrap');
-		// wp_enqueue_script('flickity');
-		// wp_enqueue_script('fli-fade');
-		// wp_enqueue_script('fancybox');
-		// wp_enqueue_script('mask');
-		// wp_enqueue_script('validate');
-		// wp_enqueue_script('scroll');
+		wp_enqueue_script('mask');
 	}
 
 	wp_register_style('style',			get_bloginfo('template_url') . '/style.css?v=1');

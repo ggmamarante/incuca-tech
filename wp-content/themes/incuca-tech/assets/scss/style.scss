@@ -5,8 +5,6 @@
 ############ */
 
 @import "_bootstrap";
-// @import "_flickity";
-// @import "_fancybox";
 @import "_default";
 
 /* ######
@@ -23,18 +21,18 @@ html , body {
 }
 
 body {
-	color: $texto;
+	color: $azulEscuro;
 	font-size: 14px;
 	font-family: $openSans;
 }
 
 a , a:hover , a:focus {
-	color: $texto;
+	color: $azulEscuro;
 	text-decoration: none;
 	transition: .4s;
 }
 a:hover {
-	color: $corModelo;
+	color: $azul;
 }
 
 button , button:hover , button:focus {
@@ -88,7 +86,7 @@ img {
 .wp-pagenavi {
 	text-align: center;
 	a , span {
-		color: $texto;
+		color: $azulEscuro;
 		font-size: 14px;
 		line-height: 20px;
 		display: inline-block;
@@ -102,7 +100,7 @@ img {
 	}
 	.current {
 		color: #FFF;
-		background: $texto;
+		background: $azulEscuro;
 	}
 }
 
@@ -125,7 +123,7 @@ img {
 		width: 50px;
 		height: 50px;
 		border-radius: 50%;
-		background: $corModelo url(../images/icons/arrow-return.svg) no-repeat center 14px;
+		background: $azul url(../images/icons/arrow-return.svg) no-repeat center 14px;
 		background-size: 20px auto;
 	}
 }
@@ -177,7 +175,7 @@ img {
 
 @for $i from 1 through 6 {
 	.template-default #content .box-content h#{$i} {
-		color: $corModelo;
+		color: $azul;
 		font-size: 30px - 5px;
 		line-height: 40px;
 		margin: 0 0 20px;
@@ -255,7 +253,7 @@ img {
 		}
 	}
 	a {
-		color: $corModelo;
+		color: $azul;
 		font-size: 16px;
 		line-height: 20px;
 		display: inline-block;

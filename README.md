@@ -3,7 +3,10 @@
 
 <h2>SEO</h2>
 <ul>
-	<li>Uso das tags HTML5</li>
+	<li>Uso das tags HTML5;</li>
+	<li>Uso do SASS;</li>
+	<li>Otimização dos arquivos JS;</li>
+	<li>Aplicação dos códigos JS apenas nas páginas que serão utilizadas;</li>
 	<li>Instalação e configuração do plugin Yoast SEO;</li>
 	<li>Descrição das imagens no atributo alt.</li>
 </ul>
@@ -11,8 +14,11 @@
 <h2>Performance</h2>
 <ul>
 	<li>Otimização de todas as imagens utilizadas no tinypng.com;</li>
+	<li>Instalação dos códigos JS no final das páginas;</li>
+	<li>Pré-carregamento das fontes;</li>
 	<li>Uso de arquivos .SVG sempre que possível;</li>
 	<li>Instalação e configuração do plugin de cache (WP Rocket);</li>
+	<li>Configuração do CDN;</li>
 	<li>Também seria possível a utilização do Cloudflare.</li>
 </ul>
 
