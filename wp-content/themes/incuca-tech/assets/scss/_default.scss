@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+/* ######
+   Variáveis
+############ */
+
+/* Cores */
+
+$texto: #888;
+$corModelo: #315065;
+
+/* Fontes */
+
+$openSans: 'Open Sans', sans-serif;
+
+/* ######
+   Mixins
+############ */
+
+/* Responsivo */
+
+@mixin device($device) {
+	@if $device == 'xl' {
+		@media (max-width: 1399px) {
+			@content;
+		}
+	} @else if $device == 'lg' {
+		@media (max-width: 1199px) {
+			@content;
+		}
+	} @else if $device == 'md' {
+		@media (max-width: 991px) {
+			@content;
+		}
+	} @else if $device == 'sm' {
+		@media (max-width: 767px) {
+			@content;
+		}
+	} @else if $device == 'xs' {
+		@media (max-width: 575px) {
+			@content;
+		}
+	}
+}
+
+/* Texto */
+
+@mixin texto($modelo) {
+	@if $modelo == 'texto' {
+		font-size: 14px;
+		line-height: 20px;
+		margin: 0 0 15px;
+	} @else if $modelo == 'titulo' {
+		color: $corModelo;
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 35px;
+		text-transform: uppercase;
+		margin: 0 0 30px;
+	}
+}
+
+/* Botões */
+
+@mixin botao($modelo) {
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 12px 30px;
+	@if $modelo == 'branco' {
+		color: #FFF;
+		background: $corModelo;
+		&:hover {
+			color: #FFF;
+			background: $corModelo;
+		}
+	} @else if $modelo == 'preto' {
+		color: $corModelo;
+		background: #FFF;
+		&:hover {
+			color: $corModelo;
+			background: #FFF;
+		}
+
+	}
+}
