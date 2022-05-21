@@ -51,8 +51,11 @@
 /* Cores */
 
 $cinza: #F6F6F6;
+$cinzaMedio: #D7D7D7;
 $azul: #0F75BD;
-$azulEscuro: #22313F;
+$azulSuave: #105F97;
+$azulMedio: #22313F;
+$azulEscuro: #1A2530;
 $amarelo: #F9BF3B;
 
 /* Fontes */
@@ -108,7 +111,8 @@ $raleway: 'Raleway';
 		line-height: 140%;
 		letter-spacing: 0.025em;
 		text-align: center;
-		padding: 45px 0 0;
+		text-transform: uppercase;
+		padding: 30px 0 0;
 		background: url('../images/icons/titulo.png') no-repeat top center;
 	}
 }

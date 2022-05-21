@@ -8,6 +8,11 @@
 			// Lista do CPT
 		<?php } ?>
 
+		// Mostrar/ocultar modal de busca
+		$('.btn-search').click(function(){
+			$('#busca').toggleClass('show');
+		})
+
 		// Máscara do formulário
 		// $('.telefone').mask('(00) 00000-0000');
 
