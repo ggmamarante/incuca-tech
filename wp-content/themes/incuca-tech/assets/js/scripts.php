@@ -3,7 +3,29 @@
 	jQuery(window).ready(function($) {
 
 		<?php if (is_front_page()) { ?>
-			// Página inicial
+			
+			// Informações da equipe
+			$('#equipe .box-item').click(function(){
+				$('#equipe .box-item').removeClass('show');
+				$('#equipe .box-info').removeClass('show');
+			})
+			$('#equipe .box-item-1').click(function(){
+				$('#equipe .box-item-1').addClass('show');
+				$('#equipe .box-info-1').addClass('show');
+			})
+			$('#equipe .box-item-2').click(function(){
+				$('#equipe .box-item-2').addClass('show');
+				$('#equipe .box-info-2').addClass('show');
+			})
+			$('#equipe .box-item-3').click(function(){
+				$('#equipe .box-item-3').addClass('show');
+				$('#equipe .box-info-3').addClass('show');
+			})
+			$('#equipe .box-item-4').click(function(){
+				$('#equipe .box-item-4').addClass('show');
+				$('#equipe .box-info-4').addClass('show');
+			})
+
 		<?php } else if ('post' == get_post_type()) { ?>
 			// Lista do CPT
 		<?php } ?>
@@ -14,7 +36,7 @@
 		})
 
 		// Máscara do formulário
-		// $('.telefone').mask('(00) 00000-0000');
+		$('input[name="telefone"]').mask('(00) 00000-0000');
 
 		// Menu mobile
 		$('.btn-mobile').click(function() {

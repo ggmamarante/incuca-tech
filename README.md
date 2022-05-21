@@ -1,5 +1,4 @@
-# Projeto de teste para InCuca Tech
-<p>O projeto pode ser encontrado em <a href="https://portfoliodev.com.br/incuca-tech">https://portfoliodev.com.br/incuca-tech</a></p>
+<h1>Projeto de teste para InCuca Tech</h1>
 
 <h2>SEO</h2>
 <ul>
@@ -32,3 +31,5 @@
 	<li>Instalação do Google Captcha nos formulários e página de login;</li>
 	<li>Habilitado as atualizações automáticas de plugins.</li>
 </ul>
+
+<h3>Projeto desenvolvido por <a href="https://gabrielfreelancer.com.br" target="_blank">Gabriel Amarante</a></h3>
