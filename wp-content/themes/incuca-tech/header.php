@@ -23,7 +23,7 @@
 		<section id="intro">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 col-sm-7">
 						<div class="box-phone">
 							<ul class="d-table">
 								<li>
@@ -39,7 +39,7 @@
 							</ul>
 						</div><!--/ box-phone -->
 					</div><!--/ col -->
-					<div class="col-md-6">
+					<div class="col-md-6 col-sm-5 d-none d-sm-block">
 						<div class="box-social">
 							<?php if (get_field('social_facebook', 'options') != '') { ?>
 								<a href="<?php the_field('social_facebook', 'options') ?>" class="facebook" target="_blank">i</a>
@@ -59,14 +59,21 @@
 		<header id="header">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3">
+					<div class="col-md-3 col-6">
 						<figure class="box-logo">
 							<a href="<?php echo site_url() ?>">
 								<img src="<?php echo get_bloginfo('template_url') ?>/assets/images/law-firm.png" alt="">
 							</a>
 						</figure>
 					</div><!--/ col -->
-					<div class="col-md-9">
+					<div class="col-6 d-block d-md-none">
+						<div class="d-center">
+							<div class="box-menu">
+								<button class="btn-mobile">i</button>
+							</div><!--/ box-menu -->
+						</div><!--/ d-center -->
+					</div><!--/ col -->
+					<div class="col-md-9 d-none d-md-block">
 						<div class="d-center">
 							<div class="box-contain">
 								<ul class="d-table">

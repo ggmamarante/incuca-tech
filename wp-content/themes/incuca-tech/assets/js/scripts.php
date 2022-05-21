@@ -26,8 +26,6 @@
 				$('#equipe .box-info-4').addClass('show');
 			})
 
-		<?php } else if ('post' == get_post_type()) { ?>
-			// Lista do CPT
 		<?php } ?>
 
 		// Mostrar/ocultar modal de busca
@@ -40,6 +38,9 @@
 
 		// Menu mobile
 		$('.btn-mobile').click(function() {
+			$('#mobile').toggleClass('active');
+		});
+		$('#mobile a').click(function() {
 			$('#mobile').toggleClass('active');
 		});
 

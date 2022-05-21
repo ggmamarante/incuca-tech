@@ -1,14 +1,14 @@
 		<footer id="footer">
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-md-2">
+					<div class="col-xl-2 col-lg-3 col-md-3">
 						<div class="d-center">
 							<figure class="box-logo">
 								<img src="<?php echo get_bloginfo('template_url') ?>/assets/images/law-firm.png" alt="">
 							</figure>
 						</div><!--/ d-center -->
 					</div><!--/ col -->
-					<div class="col-md-3">
+					<div class="col-xl-3 col-md-5">
 						<div class="box-contain">
 							<div class="box-title">
 								<h5>Law Firm</h5>

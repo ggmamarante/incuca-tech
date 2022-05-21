@@ -50,11 +50,6 @@ img {
    Classes gerais
 ############ */
 
-/* box-slide */
-
-.box-slide {
-	position: relative;
-}
 
 /* d-table */
 
@@ -81,29 +76,6 @@ img {
 	height: 100%;
 }
 
-/* wp-pagenavi */
-
-.wp-pagenavi {
-	text-align: center;
-	a , span {
-		color: $azulMedio;
-		font-size: 14px;
-		line-height: 20px;
-		display: inline-block;
-		margin: 0 4px;
-		padding: 6px 12px;
-		transition: .4s;
-		border-radius: 3px;
-		border: none;
-		box-shadow: 0 1px 2px rgba(0,0,0,.1);
-		background: #FFF;
-	}
-	.current {
-		color: #FFF;
-		background: $azulMedio;
-	}
-}
-
 /* box-return */
 
 .box-return {
@@ -126,68 +98,6 @@ img {
 		background: $azul url(../images/icons/arrow-return.svg) no-repeat center 14px;
 		background-size: 20px auto;
 	}
-}
-
-/* ######
-   Pré-carregamento
-############ */
-
-#preloader {
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 999;
-	transition: .5s;
-	background: #FFF;
-	&.disabled {
-		z-index: -9;
-		opacity: 0;
-	}
-	img {
-		width: 80px;
-		max-width: 95vw;
-		height: auto;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-	}
-}
-
-/* ######
-   Padrão (Conteúdo)
-############ */
-
-.template-default #content {
-	padding: 60px 0;
-	background: #EEE;
-}
-
-/* box-header */
-
-.template-default #content .box-header {
-	@include texto('titulo');
-}
-
-/* box-content */
-
-@for $i from 1 through 6 {
-	.template-default #content .box-content h#{$i} {
-		color: $azul;
-		font-size: 30px - 5px;
-		line-height: 40px;
-		margin: 0 0 20px;
-	}
-}
-.template-default #content .box-content p {
-	@include texto('texto');
-}
-.template-default #content .box-content img {
-	display: block;
-	max-width: 100%;
-	margin: 40px auto;
 }
 
 /* ######
@@ -337,6 +247,27 @@ img {
 	a {
 		display: inline-block;
 	}
+	img {
+		@include device('sm') {
+			height: 90px;
+		}
+	}
+}
+
+/* box-menu */
+
+#header .box-menu {
+	text-align: right;
+	width: 100%;
+	button {
+		color: transparent;
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		border: none;
+		background: url('../images/icons/menu.svg') no-repeat center center;
+		background-size: cover;
+	}
 }
 
 /* box-contain */
@@ -382,6 +313,9 @@ img {
 		li {
 			display: inline-block;
 			margin: 0 0 0 30px;
+			@include device('md') {
+				margin: 0 0 0 15px;
+			}
 			&:first-child {
 				margin: 0;
 			}
@@ -395,6 +329,9 @@ img {
 		display: inline-block;
 		position: relative;
 		transform: translateY(-4px);
+		@include device('md') {
+			letter-spacing: 0.01em;
+		}
 		&:before {
 			content: '';
 			display: block;
@@ -499,6 +436,10 @@ img {
 #footer .d-center {
 	height: 255px;
 	border-right: solid 1px #FFF;
+	@include device('sm') {
+		height: initial;
+		border: none;
+	}
 }
 
 /* box-logo */
@@ -506,6 +447,14 @@ img {
 #footer .box-logo {
 	width: 100%;
 	margin: 0;
+	@include device('md') {
+		padding: 0 50px 0 0;
+	}
+	@include device('sm') {
+		text-align: center;
+		margin: 0 0 50px;
+		padding: 0;
+	}
 	img {
 		filter: brightness(0) invert(1);
 	}
@@ -515,12 +464,21 @@ img {
 
 #footer .box-contain {
 	padding: 0 0 0 30px;
+	@include device('md') {
+		padding: 0 0 0 20px;
+	}
+	@include device('sm') {
+		padding: 0;
+	}
 }
 
 /* box-title */
 
 #footer .box-title {
 	margin: 0 0 15px;
+	@include device('sm') {
+		text-align: center;
+	}
 	h5 {
 		color: #FFF;
 		font-size: 14px;
@@ -536,6 +494,10 @@ img {
 
 #footer .box-info {
 	margin: 0 0 30px;
+	@include device('sm') {
+		text-align: center;
+		margin: 0 0 50px;
+	}
 	p {
 		@include texto('texto');
 		color: #FFF;
@@ -550,6 +512,10 @@ img {
 /* box-social */
 
 #footer .box-social {
+	@include device('sm') {
+		text-align: center;
+		margin: 0 0 50px;
+	}
 	a {
 		display: inline-block;
 		width: 35px;
@@ -576,6 +542,11 @@ img {
 
 #footer .box-form {
 	text-align: right;
+	@include device('sm') {
+		text-align: center;
+		max-width: 300px;
+		margin: 0 auto;
+	}
 	input , textarea {
 		text-align: left;
 		width: 100%;
@@ -584,10 +555,16 @@ img {
 		padding: 0 15px;
 		border: none;
 		background: #FFF;
+		@include device('md') {
+			height: 40px;
+		}
 	}
 	textarea {
 		height: 100px;
 		padding: 10px 15px;
+		@include device('md') {
+			height: 60px;
+		}
 	}
 	button {
 		color: #FFF;
@@ -627,6 +604,9 @@ img {
 #footer-link {
 	padding: 20px 0 15px;
 	background: $azulEscuro;
+	@include device('sm') {
+		padding: 20px 0 50px;
+	}
 }
 
 /* navbar */
@@ -642,6 +622,9 @@ img {
 		li {
 			display: inline-block;
 			margin: 0 0 0 50px;
+			@include device('sm') {
+				margin: 0 10px 10px;
+			}
 			&:first-child {
 				margin: 0;
 			}
@@ -678,6 +661,9 @@ img {
 	left: 0;
 	z-index: 2;
 	background: rgba(0,0,0,.3);
+	@include device('sm') {
+		height: 100%;
+	}
 }
 
 /* box-content */
@@ -688,6 +674,16 @@ img {
 	padding: 0 60px;
 	backdrop-filter: blur(6px);
 	background: rgba(255,255,255,.6);
+	@include device('sm') {
+		width: calc(100% - 60px);
+		height: initial;
+		padding: 20px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		background: rgba(255,255,255,.75)
+	}
 }
 
 /* box-info */
@@ -740,6 +736,9 @@ img {
 		width: 100%;
 		height: 400px;
 		object-fit: cover;
+		@include device('sm') {
+			height: initial;
+		}
 	}
 }
 
@@ -764,6 +763,10 @@ img {
 	text-align: center;
 	margin: 0 0 40px;
 	padding: 0 10px;
+	@include device('sm') {
+		max-width: 280px;
+		margin: 0 auto 40px;
+	}
 	img {
 		max-height: 96px;
 	}
@@ -815,6 +818,10 @@ img {
 		letter-spacing: 0.05em;
 		text-align: center;
 		margin: 0 0 10px;
+		@include device('sm') {
+			font-size: 18px;
+			letter-spacing: 0.01em;
+		}
 	}
 	p {
 		color: #FFF;
@@ -865,9 +872,15 @@ img {
 	&:hover , &.show {
 		img {
 			opacity: .3;
+			@include device('sm') {
+				opacity: .2;
+			}
 		}
 		p {
 			opacity: 1;
+			@include device('sm') {
+				opacity: 0;
+			}
 		}
 	}
 	img {
@@ -899,6 +912,9 @@ img {
 .home #equipe .box-content {
 	height: 100%;
 	padding: 40px 60px;
+	@include device('lg') {
+		padding: 30px;
+	}
 	h2 {
 		color: $azulMedio;
 		font-size: 18px;
@@ -934,6 +950,9 @@ img {
 /* box-info */
 
 .home #convite .box-info {
+	@include device('sm') {
+		margin: 0 0 30px;
+	}
 	h2 {
 		color: #FFF;
 		font-size: 24px;
@@ -983,7 +1002,9 @@ img {
 /* box-item */
 
 .home #artigos .box-item {
+	height: calc(100% - 40px);
 	margin: 0 0 40px;
+	background: #FFF;
 	a {
 		display: block;
 	}
@@ -1061,6 +1082,9 @@ img {
 /* box-info */
 
 .home #newsletter .box-info {
+	@include device('sm') {
+		margin: 0 0 30px;
+	}
 	p {
 		color: #FFF;
 		font-size: 18px;
@@ -1141,5 +1165,8 @@ img {
 	iframe {
 		width: 100%;
 		height: 500px;
+		@include device('lg') {
+			height: 300px;
+		}
 	}
 }

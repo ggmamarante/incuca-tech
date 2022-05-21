@@ -30,7 +30,7 @@
 			</div><!--/ box-header -->
 			<div class="row">
 				<?php if (get_field('atuacao_cards')) : while(has_sub_field('atuacao_cards')) : ?>
-					<div class="col-md-3">
+					<div class="col-lg-3 col-md-6">
 						<div class="box-item">
 							<img src="<?php echo get_sub_field('sub_icone')['url'] ?>" alt="<?php echo get_sub_field('sub_icone')['alt']; ?>" title="<?php echo get_sub_field('sub_icone')['title']; ?>">
 							<h2><?php the_sub_field('sub_titulo') ?></h2>
@@ -61,7 +61,7 @@
 			</div><!--/ box-header -->
 			<div class="box-contain">
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-lg-8">
 						<ul class="d-table">
 							<?php
 								if (get_field('sobre_equipe')) : $i = 0;
@@ -76,7 +76,7 @@
 							<?php endwhile; endif; ?>
 						</ul>
 					</div><!--/ col -->
-					<div class="col-md-4">
+					<div class="col-lg-4">
 						<div class="box-content">
 							<?php
 								if (get_field('sobre_equipe')) : $i = 0;
@@ -97,13 +97,13 @@
 	<section id="convite">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-5">
+				<div class="col-xl-5 col-lg-6 col-md-8">
 					<div class="box-info">
 						<h2><?php the_field('convite_titulo') ?></h2>
 						<p><?php the_field('convite_texto') ?></p>
 					</div><!--/ box-info -->
 				</div><!--/ col -->
-				<div class="col-md-3">
+				<div class="col-lg-3 col-md-4">
 					<div class="d-center">
 						<div class="box-link">
 							<a href="<?php the_field('convite_link') ?>">Consulte agora</a>
@@ -125,11 +125,38 @@
 						'post_type'			=> 'post',
 						'post_status'		=> 'publish',
 						'order'				=> 'DESC',
-						'posts_per_page'	=> 3,
+						'posts_per_page'	=> 2,
 					]);
 					if ( $args->have_posts() ) : while ( $args->have_posts() ) : $args->the_post();
 				?>
-					<div class="col-md-4">
+					<div class="col-lg-4 col-md-6">
+						<div class="box-item">
+							<a href="<?php the_permalink() ?>">
+								<figure class="item-image">
+									<img src="<?php echo get_field('preview_foto')['url'] ?>" alt="<?php echo get_field('preview_foto')['alt']; ?>" title="<?php echo get_field('preview_foto')['title']; ?>">
+								</figure>
+								<div class="item-title">
+									<h2><?php the_title() ?></h2>
+								</div><!--/ item-title -->
+								<div class="item-info">
+									<span><?php echo get_the_date() ?> às <?php echo get_the_time() ?></span>
+									<p><?php $content = wp_trim_words(get_field('preview_texto'), 30); echo $content; ?></p>
+								</div><!--/ item-info -->
+							</a>
+						</div><!--/ box-item -->
+					</div><!--/ col -->
+				<?php endwhile; endif; wp_reset_postdata(); ?>
+				<?php
+					$args = new WP_Query([
+						'post_type'			=> 'post',
+						'post_status'		=> 'publish',
+						'order'				=> 'DESC',
+						'offset'			=> 2,
+						'posts_per_page'	=> 1,
+					]);
+					if ( $args->have_posts() ) : while ( $args->have_posts() ) : $args->the_post();
+				?>
+					<div class="col-lg-4 d-none d-lg-block">
 						<div class="box-item">
 							<a href="<?php the_permalink() ?>">
 								<figure class="item-image">
@@ -156,12 +183,12 @@
 	<section id="newsletter">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-xl-4 col-lg-5 col-md-6">
 					<div class="box-info">
 						<p><?php the_field('newsletter_texto') ?></p>
 					</div><!--/ box-info -->
 				</div><!--/ col -->
-				<div class="col-md-8">
+				<div class="col-xl-8 col-lg-7 col-md-6">
 					<div class="box-form">
 						<?php echo do_shortcode('[contact-form-7 id="65" title="Newsletter"]') ?>
 					</div><!--/ box-form -->

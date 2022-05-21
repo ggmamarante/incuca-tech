@@ -21,20 +21,12 @@
 	add_action('wp_print_styles','add_css');
 
 	wp_register_script( 'bootstrap',	get_bloginfo('template_url') . '/assets/js/bootstrap.min.js');
-	wp_register_script( 'flickity',		get_bloginfo('template_url') . '/assets/js/flickity.min.js');
-	wp_register_script( 'fli-fade',		get_bloginfo('template_url') . '/assets/js/flickity_fade.js');
-	wp_register_script( 'fancybox',		get_bloginfo('template_url') . '/assets/js/fancybox.min.js');
 	wp_register_script( 'mask',			get_bloginfo('template_url') . '/assets/js/mask.min.js');
-	wp_register_script( 'validate',			get_bloginfo('template_url') . '/assets/js/validate.min.js');
-	wp_register_script( 'scroll',		get_bloginfo('template_url') . '/assets/js/scroll.js');
 	add_action('wp_footer','add_scripts');
 
 	/* ######
 	   Funções
 	############ */
-
-	// Recorte automático de imagens
-	add_image_size('default', 1920, 1080, true);
 
 	// Menu do site no painel
 	add_theme_support('menus');
@@ -63,12 +55,6 @@
 	function change_graphic_lib($array) {
 		return array('WP_Image_Editor_GD', 'WP_Image_Editor_Imagick');
 	}
-
-	// Ocultar mensagem de atualização do Wordpress
-	function remove_upgrade_nag() {
-		echo '<style type="text/css">.update-nag {display: none}</style>';
-	}
-	add_action('admin_head', 'remove_upgrade_nag');
 
 	// Alterando link do logo no wp-admin
 	function my_login_logo_url() {
